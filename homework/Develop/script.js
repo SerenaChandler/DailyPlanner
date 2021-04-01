@@ -2,7 +2,7 @@
 
 
 let updateTime = function () {
-    let currentTime = moment().format('MMM: Do: dddd')
+    let currentTime = moment().format('MMM: Do: dddd: h:mm:s')
     $("#currentDay").text(currentTime)
 }
 
