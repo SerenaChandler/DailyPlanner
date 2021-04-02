@@ -10,7 +10,7 @@
 
 ## preview of the site
 
-![image](placeholder)
+![image](sitePreview.png)
 
 ## code snippet
 ```javascript
