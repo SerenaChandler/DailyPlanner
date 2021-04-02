@@ -11,7 +11,10 @@ var store3PM = $(".3")
 var store4PM = $(".4")
 var store5PM = $(".5")
 
-
+var times = {
+    "9AM": store9AM,
+    "10AM": store10AM
+}
 
 
 var currentHour = moment().format("H")
@@ -32,8 +35,8 @@ let updateTime = function () {
 
 
 function retreiveRoutine() {
-    var daily = localStorage.getItem("routine9")
-    store9AM.append(daily)
+    var daily = JSON.parse(localStorage.getItem("routine9"))
+    times["9AM"].append(daily)
 
     var daily = localStorage.getItem("routine10")
     store10AM.append(daily)
@@ -76,7 +79,7 @@ function retreiveRoutine() {
 retreiveRoutine()
 
 saveButton.on("click", function() {
-    localStorage.setItem("routine9", store9AM.val()) })
+    localStorage.setItem("routine9", JSON.stringify(times)) })
 
 saveButton.on("click", function() {
     localStorage.setItem("routine10", store10AM.val()) })
@@ -98,7 +101,6 @@ saveButton.on("click", function() {
 
 saveButton.on("click", function() {
     localStorage.setItem("routine3", store3PM.val()) })
-
 
 
 saveButton.on("click", function() {
