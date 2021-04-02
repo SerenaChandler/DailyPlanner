@@ -12,8 +12,15 @@ var store4PM = $(".4")
 var store5PM = $(".5")
 
 var times = {
-    "9AM": store9AM,
-    "10AM": store10AM
+    "9AM": store9AM.val(),
+    "10AM": store10AM.val(),
+    "11AM": store11AM.val(),
+    "12AM": store12AM.val(),
+    "1PM": store1PM.val(),
+    "2PM": store2PM.val(),
+    "3PM": store3PM.val(),
+    "4PM": store4PM.val(),
+    "5PM": store5PM.val()
 }
 
 
@@ -35,8 +42,8 @@ let updateTime = function () {
 
 
 function retreiveRoutine() {
-    var daily = JSON.parse(localStorage.getItem("routine9"))
-    times["9AM"].append(daily)
+    var daily = (localStorage.getItem("routine9"))
+    store9AM.append(daily)
 
     var daily = localStorage.getItem("routine10")
     store10AM.append(daily)
@@ -79,7 +86,7 @@ function retreiveRoutine() {
 retreiveRoutine()
 
 saveButton.on("click", function() {
-    localStorage.setItem("routine9", JSON.stringify(times)) })
+    localStorage.setItem("routine9", store9AM.val()) })
 
 saveButton.on("click", function() {
     localStorage.setItem("routine10", store10AM.val()) })
@@ -112,10 +119,107 @@ saveButton.on("click", function() {
 
 
 
-if (currentHour == "8") {
-    store9AM.attr("background-color:red") }
-// }if (hour == currentHour) {
+if (currentHour == 9) {
+store9AM.addClass("present") }
 
-// }if (hour > currentHour)
 
-// var target = event.target.getAttribute("data-index");
+if (currentHour < 9) {
+store9AM.addClass("future") }
+
+
+if (currentHour > 9) {
+store9AM.addClass("past") }
+    
+
+if (currentHour == 10) {
+store10AM.addClass("present") }
+    
+    
+if (currentHour < 10) {
+store10AM.addClass("future") }
+
+
+if (currentHour > 10) {
+store10AM.addClass("past") }
+
+
+if (currentHour == 11) {
+store11AM.addClass("present") }
+
+
+if (currentHour < 11) {
+store11AM.addClass("future") }
+
+
+if (currentHour > 11) {
+store11AM.addClass("past") }
+    
+
+if (currentHour == 12) {
+store12AM.addClass("present") }
+    
+    
+if (currentHour < 12) {
+store12AM.addClass("future") }
+
+
+if (currentHour > 12) {
+store12AM.addClass("past") }
+
+
+if (currentHour == 13) {
+store1PM.addClass("present") }
+    
+    
+if (currentHour < 13) {
+store1PM.addClass("future") }
+
+
+if (currentHour > 13) {
+store1PM.addClass("past") }
+
+if (currentHour == 14) {
+store2PM.addClass("present") }
+        
+        
+if (currentHour < 14) {
+store2PM.addClass("future") }
+    
+    
+if (currentHour > 14) {
+store2PM.addClass("past") }
+
+
+if (currentHour == 15) {
+store3PM.addClass("present") }
+
+
+if (currentHour < 15) {
+store3PM.addClass("future") }
+
+
+if (currentHour > 15) {
+store3PM.addClass("past") }
+    
+
+if (currentHour == 16) {
+store4PM.addClass("present") }
+    
+    
+if (currentHour < 16) {
+store4PM.addClass("future") }
+
+
+if (currentHour > 16) {
+store4PM.addClass("past") }
+
+if (currentHour == 17) {
+store5PM.addClass("present") }
+        
+    
+if (currentHour < 17) {
+store5PM.addClass("future") }
+
+
+if (currentHour > 17) {
+store5PM.addClass("past") }
